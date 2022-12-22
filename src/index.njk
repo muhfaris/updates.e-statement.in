@@ -1,0 +1,10 @@
+---
+layout: layout.njk
+title: Updates E-Statement Converter
+---
+<h1>Updates E-Statement Converter</h1>
+<ul>
+{%- for post in collections.post -%}
+    <li><a href="{{post.url}}">{{ post.data.title }}</a></li>
+{%- endfor -%}
+</ul>

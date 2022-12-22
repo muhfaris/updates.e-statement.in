@@ -1,25 +1,23 @@
 {
-  "name": "jekyll-with-tailwind",
+  "name": "updates.e-statement.in",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "jekyll:dev": "bundle exec jekyll serve --incremental --watch",
-    "jekyll:build": "JEKYLL_ENV=production bundle exec jekyll build",
-    "css:dev": "postcss _sass/main.scss --output assets/css/style.css",
-    "css:build": "NODE_ENV=production postcss _sass/main.scss --output assets/css/style.css",
-    "dev": "concurrently --kill-others \"npm run jekyll:dev\" \"npm run css:dev\"",
-    "build": "npm run css:dev && npm run jekyll:build"
+    "start": "npx @11ty/eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhfaris/updates.e-statement.in.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "concurrently": "^6.0.0",
-    "cssnano": "^4.1.10",
-    "postcss": "^8.2.8",
-    "postcss-cli": "^8.3.1",
-    "tailwindcss": "^2.0.4"
+  "bugs": {
+    "url": "https://github.com/muhfaris/updates.e-statement.in/issues"
+  },
+  "homepage": "https://github.com/muhfaris/updates.e-statement.in#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.2"
   }
 }
