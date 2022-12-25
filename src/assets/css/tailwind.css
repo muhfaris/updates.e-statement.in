@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  blockquote {
+    @apply text-xl;
+    @apply italic;
+    @apply text-gray-900;
+    @apply dark:text-white;
+  }
+
+  #single-post > p {
+      @apply leading-normal;
+      @apply mb-5;
+  }
+
+  #single-post > h2{
+      @apply font-semibold;
+      @apply text-xl;
+  }
+
+  #single-post > p > a{
+      @apply text-teal-600;
+      @apply font-semibold;
+  }
+}

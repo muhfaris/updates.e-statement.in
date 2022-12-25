@@ -2,9 +2,61 @@
 layout: layout.njk
 title: Updates E-Statement Converter
 ---
-<h1>Updates E-Statement Converter</h1>
-<ul>
-{%- for post in collections.post -%}
-    <li><a href="{{post.url}}">{{ post.data.title }}</a></li>
-{%- endfor -%}
-</ul>
+    <section class="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-12 lg:py-16">
+        <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
+            <div class="flex flex-col w-full md:flex-row">
+                <div class="flex justify-between">
+                    <h1 class="relative flex flex-col text-4xl font-extrabold text-left text-black">
+                        E-Statement Converter
+                        <span class="text-teal-600 my-2">Updates</span>
+                    </h1>
+                </div>
+                <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96"> </div>
+            </div>
+            <p class="relative flex text-black justify-center"> <a href="https://www.e-statement.in">www.e-statement.in</a></p>
+            <div class="my-16 border-b border-gray-300 lg:my-22"></div>
+            <div class="timeline text-left">
+                <ol class="relative border-l border-gray-200 dark:border-gray-700">
+                    {% set posts = collections.post | sortDesc %}
+                    {% for post in posts %}
+                    <li class="mb-10 ml-4">
+                        <div
+                            class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700">
+                        </div>
+                        <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                            {{ post.date | asPostDate }}
+                        </time>
+                        <a href="{{post.url}}">
+                            <h3 class="text-lg font-semibold text-gray-900">
+                                {{ post.data.title }}
+                            </h3>
+                        </a>
+                        <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 max-w-xl">{{ post.data.description }}</p>
+                        {% set hasImage = post.data.intro.image | hasData %}
+                        {% if hasImage %}
+                            <div class="flex my-5">
+                            <!-- <img class="rounded w-16 md:w-32 lg:h-full lg:w-5/6" src="{{post.data.intro.image}}" alt="{{post.data.intro.imageAlt}}"> -->
+                            <img class="rounded w-full" src="{{post.data.intro.image}}" alt="{{post.data.intro.imageAlt}}">
+                            </div>
+                        {% endif %}
+                        <div class="flex tags">
+                            {% for tag in post.data.tags%}
+                                <div class="relative text-white text-xs font-semibold rounded {{ tag | tagsColor }}">
+                                    <p class="py-1 px-2">{{ tag }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ol>
+                {% if posts.currentPage > 1%}
+                    <a href="/post?page={ posts.prevPage}">Previous</a>
+                {% endif %}
+
+                {% if posts.currentPage < posts.totalPages %}
+                    <a href="/post?page={ posts.nextPage}">Previous</a>
+                {% endif %}
+
+            </div>
+        </div>
+    </section>

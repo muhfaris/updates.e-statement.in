@@ -1,0 +1,24 @@
+---
+layout: layout.njk
+---
+    <section class="flex items-center justify-center py-10 text-black bg-white sm:py-16 md:py-24 lg:py-16">
+       <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
+       <div class="flex back text-black font-semibold"><a href="/">< Back</a></div>
+          <h1 class="text-black font-semibold text-3xl">{{ title }}</h1>
+            <div class="metainfo flex justify-center text-gray-500">
+            {% for tag in tags%}
+                <p class="py-1 px-2 m-2 text-white rounded {{tag | tagsColor}}">{{tag}}</p>
+            {% endfor %}
+            <p class="p-1 m-2"> {{ date | asPostDate}} </p>
+            </div>
+          <div id="single-post" class="timeline text-left text-black py-5">
+            {% set hasImage = intro.image | hasData %}
+            {% if hasImage %}
+            <div class="preview">
+                <img src="{{ intro.image }}" alt="{{ intro.imageAlt }}">
+            </div>
+            {% endif %}
+            {{ content | safe }}
+          </div>
+       </div>
+    </section>
