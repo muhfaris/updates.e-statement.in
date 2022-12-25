@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "rm -rf _site && npx @11ty/eleventy --serve & npx tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/css/style.css --watch",
-    "build:prod": "npx @11ty/eleventy & npx tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/css/style.css"
+    "build:prod": "npx @11ty/eleventy & npx tailwindcss -i ./src/assets/css/tailwind.css -o ./_site/css/style.css --minify"
   },
   "repository": {
     "type": "git",
