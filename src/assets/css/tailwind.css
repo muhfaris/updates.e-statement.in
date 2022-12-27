@@ -9,17 +9,21 @@ blockquote {
   @apply dark:text-white;
 }
 
-#single-post > p {
+#single-post .content > p:first-child {
+    @apply indent-5;
+}
+
+#single-post .content > p {
   @apply leading-normal;
   @apply mb-5;
 }
 
-#single-post > h2 {
+#single-post > .content > h2 {
   @apply font-semibold;
   @apply text-xl;
 }
 
-#single-post > p > a {
+#single-post > .content > p > a {
   @apply text-teal-600;
   @apply font-semibold;
 }
