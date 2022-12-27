@@ -9,7 +9,7 @@ intro:
     image: '/assets/images/release-v1.0.0.jpeg'
     imageAlt: 'release v1.0.0'
 ---
-**H**ari ini kita merilis aplikasi baru untuk membantu siapa saja dalam mencatat pengeluaran dari
+**H**ari ini kami merilis aplikasi baru untuk membantu siapa saja dalam mencatat pengeluaran dari
 platform online. Nama aplikasi ini adalah ***E-Statement Converter***, aplikasi konverter untuk membantu siapa saja melakukan konvert e-statement dari berbagai platform dalam format PDF file ke excel file.
 
 E-statement dari platform dalam bentuk PDF file itu susah untuk mengelolanya atau menyatukan dengan

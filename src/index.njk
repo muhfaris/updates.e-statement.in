@@ -1,6 +1,7 @@
 ---
 layout: layout.njk
 title: Updates E-Statement Converter
+description: "the pages contain information of updates the changes from e-statement.in"
 ---
     <section class="flex items-center justify-center py-10 text-white bg-white sm:py-16 md:py-12 lg:py-16">
         <div class="relative max-w-3xl px-10 text-center text-white auto lg:px-0">
@@ -11,7 +12,6 @@ title: Updates E-Statement Converter
                         <span class="text-teal-600 my-2">Updates</span>
                     </h1>
                 </div>
-                <div class="relative top-0 right-0 h-64 mt-12 md:-mt-16 md:absolute md:h-96"> </div>
             </div>
             <p class="relative flex text-black justify-center"> <a href="https://www.e-statement.in">www.e-statement.in</a></p>
             <div class="my-16 border-b border-gray-300 lg:my-22"></div>
@@ -34,14 +34,13 @@ title: Updates E-Statement Converter
                         <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 max-w-xl">{{ post.data.description }}</p>
                         {% set hasImage = post.data.intro.image | hasData %}
                         {% if hasImage %}
-                            <div class="flex my-5">
-                            <!-- <img class="rounded w-16 md:w-32 lg:h-full lg:w-5/6" src="{{post.data.intro.image}}" alt="{{post.data.intro.imageAlt}}"> -->
-                            <img class="rounded w-full" src="{{post.data.intro.image}}" alt="{{post.data.intro.imageAlt}}">
+                            <div class="flex relative my-5 object-center ">
+                            <img class="rounded w-full max-w-sm h-auto" src="{{post.data.intro.image}}" alt="{{post.data.intro.imageAlt}}">
                             </div>
                         {% endif %}
                         <div class="flex tags">
                             {% for tag in post.data.tags%}
-                                <div class="relative text-white text-xs font-semibold rounded {{ tag | tagsColor }}">
+                                <div class="mx-1 relative text-white text-xs font-semibold rounded {{ tag | tagsColor }}">
                                     <p class="py-1 px-2">{{ tag }}</p>
                                 </div>
                             {% endfor %}
@@ -51,8 +50,8 @@ title: Updates E-Statement Converter
                 </ol>
                 {% if posts.currentPage > 1%}
                     <a href="/post?page={ posts.prevPage}">Previous</a>
-                {% endif %}
 
+                {% endif %}
                 {% if posts.currentPage < posts.totalPages %}
                     <a href="/post?page={ posts.nextPage}">Previous</a>
                 {% endif %}
